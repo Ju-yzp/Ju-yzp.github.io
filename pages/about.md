@@ -1,0 +1,16 @@
+---
+layout: mypost
+title: 关于我
+---
+
+> Hello 陌生人，欢迎访问 Ju-yzp blog
+
+## 相关技能
+
+立体匹配，OpenGL渲染，ROS开发，串口通讯，c++，机械臂相关算法
+
+## 联系我
+
+- Email&nbsp;: [1772314831@qq.com](mailto:wjupzy20230551@qq.com)
+
+- GitHub: [https://github.com/tmaize](https://github.com/Ju-yzp)
