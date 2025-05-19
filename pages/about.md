@@ -11,6 +11,6 @@ title: 关于我
 
 ## 联系我
 
-- Email&nbsp;: [1772314831@qq.com](mailto:wjupzy20230551@qq.com)
+- Email&nbsp;: [wjpzy20230551@qq.com](mailto:wjupzy20230551@qq.com)
 
-- GitHub: [https://github.com/tmaize](https://github.com/Ju-yzp)
+- GitHub: [https://github.com/Ju-yzp](https://github.com/Ju-yzp)
