@@ -4,10 +4,10 @@ plugins:
   - jekyll-regex-replace
 
 # SEO相关信息
-title: TMaize Blog
+title: Ju-yzp Blog
 description: TMaize的个人博客
-keywords: TMaize,Blog,Java,Html,JavaScript
-author: TMaize
+keywords: Ju-yzp,c++,ROS2,stereo_matching,OpenCV,robotic
+author: Ju-yzp
 footerText: 'Copyright © 2016 皖ICP备16016174号'
 
 # 这些不要动
