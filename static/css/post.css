@@ -1,5 +1,5 @@
 .page-post {
-  font-family: "FangSong", "STFangsong", serif; 
+  font-family: "FangSong" !important; 
   font-size: 14px;
   line-height: 2;
   word-break: break-all;
