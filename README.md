@@ -48,19 +48,15 @@ rougify style github > highlighting.css
 
 # 项目配置
 
-1. 如果使用自己的域名，`CNAME`文件里的内容请换成你自己的域名，然后 CNAME 解析到`用户名.github.com`
+1. 修改`pages/about.md`中关于我的内容
 
-2. 如果使用 GitHub 的的域名，请删除`CNAME`文件，然后把你的项目修改为`用户名.github.io`
+2. 修改`_config.yml`文件，具体作用请参考注释
 
-3. 修改`pages/about.md`中关于我的内容
+3. 清空`posts`和`_posts`目录下所有文件，注意是清空，不是删除这两个目录
 
-4. 修改`_config.yml`文件，具体作用请参考注释
+4. 网站的 logo 和 favicon 放在了`static/img/`下，替换即可，大小无所谓，图片比例最好是 1:1
 
-5. 清空`posts`和`_posts`目录下所有文件，注意是清空，不是删除这两个目录
-
-6. 网站的 logo 和 favicon 放在了`static/img/`下，替换即可，大小无所谓，图片比例最好是 1:1
-
-7. 如果你是把项目 fork 过去的，想要删除我的提交记录可以使用下面的命令
+5. 如果你是把项目 fork 过去的，想要删除我的提交记录可以使用下面的命令
 
    ```
    git checkout --orphan temp
