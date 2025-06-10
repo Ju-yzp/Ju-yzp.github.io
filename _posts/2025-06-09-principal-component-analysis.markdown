@@ -2,16 +2,16 @@
 layout:     post
 title:      "Principal Component Analysis"
 subtitle:   " \"math and ineresting\""
-date:       2025-06-10 21:06:00
+date:       2025-06-09 21:06:00
 author:     "Ju-yzp"
-header-img: "img/pos-bg-principal-component-analysis.png"
+header-img: "img/post-bg-principal-component-analysis.png"
 tags:
     - 机器学习 
     - 机械臂
     - 数学
 ---
 
-> 未完结
+> “未完结. “
 
 ## 前言 
 
@@ -21,5 +21,9 @@ tags:
 
 ![Envelopes](img/in-post/Envelopes.png)
 <small class="img-hint">包络体</small>
+
+
+## 正文
+
 
 
