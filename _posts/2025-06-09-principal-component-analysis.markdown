@@ -19,7 +19,7 @@ tags:
 
 在思考如何制作机械臂零部件的球形包络体时，我想到了机器学习中的pca算法。
 
-![Envelopes](img/in-post/Envelopes.png)
+![Envelopes](/img/in-post/Envelopes.png)
 <small class="img-hint">包络体</small>
 
 
