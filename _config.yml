@@ -1,8 +1,8 @@
 # Site settings
-title: Your Blog
-SEOTitle: 你的博客 | Your Blog
+title: Jup's Blog
+SEOTitle: Jup's Blog
 header-img: img/home-bg.jpg
-email: huxpro@gmail.com
+email: Jup230551@outlook.com
 description: ""
 keyword: ""
 url:  "https://Ju-yzp.github.io"       # your host, for absolute URL
@@ -13,10 +13,10 @@ future: true
 
 # SNS settings
 RSS: false
-weibo_username: huxpro
-zhihu_username: huxpro
-github_username: huxpro
-twitter_username: huxpro
+#weibo_username: huxpro
+zhihu_username: Jup
+github_username: Ju-yzp
+#twitter_username: huxpro
 #facebook_username:  huxpro
 #linkedin_username:  firstname-lastname-idxxxx
 

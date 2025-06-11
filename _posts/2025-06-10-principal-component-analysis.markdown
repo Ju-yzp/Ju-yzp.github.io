@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      "Principal Component Analysis"
-subtitle:   " \"math and ineresting\""
-date:       2025-06-09 21:06:00
+subtitle:   " \"math and interest\""
+date:       2025-06-10 21:06:00
 author:     "Ju-yzp"
 header-img: "img/post-bg-principal-component-analysis.png"
 tags:
