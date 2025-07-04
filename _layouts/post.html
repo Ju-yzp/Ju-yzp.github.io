@@ -135,6 +135,118 @@ layout: default
 <!-- disqus 公共JS代码 end -->
 {% endif %}
 
+<!-- 代码复制功能：添加在 body 底部 -->
+<script>
+// 页面加载完成后执行
+document.addEventListener('DOMContentLoaded', function() {
+  // 遍历所有代码块（匹配 Jekyll 生成的 <pre><code> 结构）
+  document.querySelectorAll('pre > code').forEach((codeBlock, index) => {
+    // 为代码块容器添加相对定位，方便按钮定位
+    const preBlock = codeBlock.parentElement;
+    preBlock.style.position = 'relative';
+
+    // 创建复制按钮
+    const copyBtn = document.createElement('button');
+    copyBtn.className = 'code-copy-btn';
+    copyBtn.textContent = '复制代码';
+    copyBtn.title = '点击复制代码到剪贴板';
+
+    // 给按钮添加点击事件
+    copyBtn.addEventListener('click', function() {
+      // 复制代码块内容
+      navigator.clipboard.writeText(codeBlock.textContent).then(() => {
+        // 复制成功提示
+        this.textContent = '已复制!';
+        this.style.backgroundColor = '#4CAF50';
+        this.style.color = 'white';
+        // 2秒后恢复原状
+        setTimeout(() => {
+          this.textContent = '复制代码';
+          this.style.backgroundColor = '';
+          this.style.color = '';
+        }, 2000);
+      }).catch(err => {
+        // 复制失败处理（兼容旧浏览器）
+        console.error('复制失败:', err);
+        this.textContent = '复制失败';
+        this.style.backgroundColor = '#f44336';
+        this.style.color = 'white';
+        setTimeout(() => {
+          this.textContent = '复制代码';
+          this.style.backgroundColor = '';
+          this.style.color = '';
+        }, 2000);
+      });
+    });
+
+    // 将按钮添加到代码块容器中
+    preBlock.appendChild(copyBtn);
+  });
+});
+</script>
+
+<!-- 复制按钮的样式 -->
+<style>
+/* 代码复制按钮样式 */
+.code-copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+  z-index: 10; /* 确保按钮在代码块上方 */
+}
+
+/* 鼠标悬停代码块时显示按钮 */
+pre:hover .code-copy-btn {
+  opacity: 1;
+}
+
+/* 按钮悬停效果 */
+.code-copy-btn:hover {
+  background-color: #eee;
+  border-color: #ccc;
+}
+
+
+/* 代码块样式优化*/
+pre {
+  font-family: "JetBrains Mono", "Fira Code", "Consolas", "Monaco", monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 4px;
+  background-color: #282c34; 
+  color: #abb2bf; 
+  overflow-x: auto;
+  white-space: pre; 
+}
+
+/* 代码内联样式（如果需要） */
+code {
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #3b4048; 
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  pre {
+    font-size: 12px;
+    padding: 0.8em;
+  }
+} 
+</style>
+
 
 {% if site.anchorjs %}
 <!-- async load function -->
