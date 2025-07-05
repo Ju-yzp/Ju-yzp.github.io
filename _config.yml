@@ -41,6 +41,10 @@ kramdown:
     css_class: 'highlight'              # 代码块外层容器的 class，用于 CSS 定位样式
     default_lang: bash                  # 未指定语言时的默认代码语言（如 bash）
     line_numbers: false                 # 暂不显示行号（如需可设为 true，需配合 CSS 调整）
+  toc: true                             # 启用自动目录生成
+  toc_levels: 1..3                      # 提取 h1~h3 作为目录项（可按需调整为 2..4 等）
+  auto_ids: true                        # 自动为标题生成 ID（用于目录跳转）
+  smart_quotes: lsquo,rsquo,ldquo,rdquo # 智能引号处理
 
 # Disqus settings
 #disqus_username: _your_disqus_short_name_
