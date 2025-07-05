@@ -14,7 +14,7 @@ layout: default
     <div class="container">
         <div class="row">
 
-    <!-- Post Container -->
+            <!-- Post Container -->
             <div class="
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
@@ -25,7 +25,7 @@ layout: default
                     {% include multilingual-sel.html %}
                 {% endif %}
 
-				{{ content }}
+                {{ content }}
 
                 <hr style="visibility: hidden;">
                 <ul class="pager">
@@ -63,8 +63,8 @@ layout: default
                 {% endif %}
             </div>  
 
-    <!-- Side Catalog Container -->
-        {% unless page.no-catalog %}
+            <!-- Side Catalog Container -->
+            {% unless page.no-catalog %}
             <div class="
                 col-lg-2 col-lg-offset-0
                 visible-lg-block
@@ -78,9 +78,9 @@ layout: default
                     <ul class="catalog-body"></ul>
                 </div>
             </div>
-        {% endunless %}
+            {% endunless %}
 
-    <!-- Sidebar Container -->
+            <!-- Sidebar Container -->
             <div class="
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // 复制代码块内容
       navigator.clipboard.writeText(codeBlock.textContent).then(() => {
         // 复制成功提示
-        this.textContent = '已复制!';
+        this.textContent = '已复制';
         this.style.backgroundColor = '#4CAF50';
         this.style.color = 'white';
         // 2秒后恢复原状
@@ -187,66 +187,100 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <!-- 复制按钮的样式 -->
 <style>
-/* 代码复制按钮样式 */
+/* 代码复制按钮样式 - 匹配目标仓库风格 */
 .code-copy-btn {
   position: absolute;
-  top: 8px;
-  right: 8px;
-  padding: 4px 8px;
-  font-size: 12px;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  font-size: 14px; /* 按钮字体适中 */
   cursor: pointer;
   background-color: #f5f5f5;
   border: 1px solid #ddd;
   border-radius: 4px;
   opacity: 0;
   transition: opacity 0.3s ease, background-color 0.3s ease;
-  z-index: 10; /* 确保按钮在代码块上方 */
+  z-index: 10;
+  color: #333;
 }
 
-/* 鼠标悬停代码块时显示按钮 */
 pre:hover .code-copy-btn {
   opacity: 1;
 }
 
-/* 按钮悬停效果 */
 .code-copy-btn:hover {
   background-color: #eee;
   border-color: #ccc;
 }
 
-
-/* 代码块样式优化*/
+/* 代码块样式 - 白色背景+放大字体 */
 pre {
-  font-family: "JetBrains Mono", "Fira Code", "Consolas", "Monaco", monospace;
-  font-size: 14px;
-  line-height: 1.6;
-  padding: 1em;
-  margin: 1em 0;
+  margin: 1.5em 0;
   border-radius: 4px;
-  background-color: #282c34; 
-  color: #abb2bf; 
+  overflow: hidden;
+  background-color: #ffffff; /* 纯白色背景，与目标仓库一致 */
+  border: 1px solid #e1e4e8; /* 浅灰边框 */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+pre code {
+  display: block;
+  padding: 1.2em;
   overflow-x: auto;
-  white-space: pre; 
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 16px; /* 放大字体，提升可读性 */
+  line-height: 1.7; /* 增加行高，避免拥挤 */
+  color: #24292e; /* 深灰文字，清晰对比 */
+  white-space: pre;
+  word-wrap: normal;
 }
 
-/* 代码内联样式（如果需要） */
-code {
-  font-family: inherit;
-  font-size: inherit;
-  background-color: #3b4048; 
+/* 行内代码样式 */
+:not(pre) > code {
   padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 15px; /* 行内代码同步放大 */
+  background-color: #f6f8fa;
+  border-radius: 4px;
+  color: #24292e;
+}
+
+/* 移动端适配 - 保持清晰且不换行过度 */
+@media (max-width: 768px) {
+  pre code {
+    font-size: 15px; /* 移动端稍减，平衡显示 */
+    padding: 1em;
+  }
+}
+
+/* 滚动条样式优化 */
+pre::-webkit-scrollbar {
+  height: 8px;
+}
+
+pre::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
   border-radius: 4px;
 }
 
-/* 响应式调整 */
-@media (max-width: 768px) {
-  pre {
-    font-size: 12px;
-    padding: 0.8em;
-  }
-} 
+pre::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
 </style>
 
+<!-- 引入代码高亮库 - 适配白色背景的高亮主题 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script>
+  // 初始化代码高亮
+  document.addEventListener('DOMContentLoaded', function() {
+    hljs.highlightAll();
+  });
+</script>
 
 {% if site.anchorjs %}
 <!-- async load function -->
@@ -268,7 +302,8 @@ code {
           placement: 'right',
           // icon: '#'
         };
-        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+        // 排除代码块中的锚点，避免干扰
+        anchors.add().remove('pre, code');
     })
 </script>
 <style>

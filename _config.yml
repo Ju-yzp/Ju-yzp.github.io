@@ -6,7 +6,7 @@ email: Jup230551@outlook.com
 description: ""
 keyword: ""
 url:  "https://Ju-yzp.github.io"       # your host, for absolute URL
-baseurl:         # for example, '/blog' if your blog hosted on 'host/blog'
+baseurl:                               # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
 future: true
@@ -20,42 +20,34 @@ github_username: Ju-yzp
 #facebook_username:  huxpro
 #linkedin_username:  firstname-lastname-idxxxx
 
-#Build settings
-# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
-highlighter: rouge
+# Build settings
+highlighter: rouge                      # GitHub Pages 推荐的代码高亮工具
 permalink: pretty
 paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
-anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+anchorjs: false                         # 关闭锚点功能，避免干扰代码块样式（如需保留可后续调整脚本）
 
-
-
-# Gems
-# from PR#40, to support local preview for Jekyll 3.0
-gems: [jekyll-paginate]
-
-
+# Gems/plugins
+plugins: 
+  - jekyll-paginate                     # 分页插件（原有）
+  # - jekyll-sitemap                    # 可选：用于生成站点地图，不影响代码块
 
 # Markdown settings
-# replace redcarpet to kramdown,
-# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
-# document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
 kramdown:
-  input: GFM                            # use Github Flavored Markdown !important
-
-
+  input: GFM                            # 支持 GitHub 风格 Markdown（代码块语法、表格等）
+  syntax_highlighter: rouge             # 明确使用 rouge 作为高亮引擎
+  syntax_highlighter_opts:
+    css_class: 'highlight'              # 代码块外层容器的 class，用于 CSS 定位样式
+    default_lang: bash                  # 未指定语言时的默认代码语言（如 bash）
+    line_numbers: false                 # 暂不显示行号（如需可设为 true，需配合 CSS 调整）
 
 # Disqus settings
 #disqus_username: _your_disqus_short_name_
 
 # Duoshuo settings
 duoshuo_username: huxblog
-# Share component is depend on Comment so we can NOT use share only.
 duoshuo_share: true                     # set to false if you want to use Comment without Sharing
-
-
-
 
 # Analytics settings
 # Baidu Analytics
@@ -64,20 +56,14 @@ ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
 ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
 ga_domain: huangxuan.me
 
-
-
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "梦之瑰丽花，终有绽放日"
 sidebar-avatar: /img/avtar.jpeg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
-
-
 # Featured Tags
 featured-tags: true                     # whether or not using Feature-Tags
 featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
-
-
 
 # Friends
 friends: [
