@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Cache Coherency Animation"
-subtitle:   " \"Love your lift\""
+subtitle:   " \"Love your life\""
 date:       2025-07-09 22:14:00
 author:     "Ju-yzp"
 header-img: "img/sunset.jpg"
