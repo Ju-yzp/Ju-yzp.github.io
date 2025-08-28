@@ -13,7 +13,7 @@ tags:
 
 # 动机
 
-由于tinyspline（用于样条插值的库）的作者在apt上没有更新，但是在conan上是一直更新的，并且作者在github上也是推荐使用conan下载cpp版本的，所以本次博客将带领大家完成一次使用conan下载tiinuspline并链接编译一个demo.
+由于tinyspline（用于样条插值的库）的作者在apt上没有更新，但是在conan上是一直更新的，并且作者在github上也是推荐使用conan下载cpp版本的，所以本次博客将带领大家完成一次使用conan下载tinyspline并链接编译一个demo.
 
 # 下载tinyspline
 
@@ -141,7 +141,7 @@ cmake .. -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release
 
 cmake --build .
 
-./test_basic_spilne
+./test_basic_spline
 ```
 
 如果你能看见以下输出的话，就说明你这次的下载和链接非常成功
