@@ -1,0 +1,185 @@
+/* 1. 基础容器：增加阴影和圆角 */
+.asm-v5-wrapper {
+    background: #1e1e1e;
+    border: 1px solid #3c3c3c;
+    border-radius: 6px;
+    color: #cccccc;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    overflow: hidden; 
+    margin: 20px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* 2. 工具栏与动作按钮 */
+.v5-toolbar {
+    background: #2d2d2d;
+    padding: 10px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #111;
+}
+
+.v5-status {
+    font-weight: bold;
+    color: #e0e0e0;
+    font-size: 13px;
+}
+
+.v5-actions button {
+    border: none;
+    padding: 6px 14px;
+    margin-left: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 3px;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.btn-step { background: #007acc; }
+.btn-step:hover { background: #118ad4; }
+.btn-step:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-reset { background: #444444; }
+.btn-reset:hover { background: #555555; }
+
+/* 3. 布局网格 */
+.v5-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #181818;
+}
+
+.v5-panel {
+    padding: 15px;
+    min-height: 280px;
+}
+
+.v5-regs { border-right: 1px solid #333; }
+
+.v5-p-title {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+/* 寄存器与内存行布局：解决粘连 */
+.v5-reg-row, .v5-mem-row {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center;
+    padding: 6px 8px;
+    font-size: 13px;
+    border-bottom: 1px solid #222;
+}
+
+.r-name, .m-addr { 
+    color: #569cd6; 
+    font-weight: bold;
+}
+
+/* 可编辑数值交互 */
+.editable-val {
+    color: #b5cea8;
+    cursor: pointer;
+    border-bottom: 1px dashed #555;
+    padding: 2px 4px;
+    min-width: 85px;
+    text-align: right;
+    transition: all 0.2s;
+}
+
+.editable-val:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
+.sp-active {
+    background: rgba(0, 122, 204, 0.15);
+    border-left: 3px solid #007acc;
+}
+
+/* 标志位展示 */
+.v5-flags {
+    margin-top: 10px;
+    padding: 8px;
+    background: #1e1e1e;
+    border: 1px solid #333;
+    font-size: 12px;
+    color: #9cdcfe;
+    text-align: center;
+    border-radius: 4px;
+}
+
+/* 4. 汇编代码区：核心滚动实现 */
+.v5-source { 
+    grid-column: 1 / span 2; 
+    border-top: 1px solid #3c3c3c; 
+    background: #0d0d0d;
+}
+
+.v5-scroll-area {
+    height: 400px; 
+    overflow-y: auto;
+    position: relative; /* 必须：提供 offsetTop 的参照原点 */
+    padding: 180px 0;   /* 必须：留出上下空白，允许首尾指令居中 */
+    scroll-behavior: smooth;
+    
+    /* 渐变遮罩：营造沉浸式滚动效果 */
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+}
+
+/* 滚动条美化 */
+.v5-scroll-area::-webkit-scrollbar { width: 6px; }
+.v5-scroll-area::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+
+/* 指令行样式 */
+.v4-c-line { 
+    display: flex; 
+    padding: 4px 20px; 
+    font-size: 13px;
+    opacity: 0.3; /* 非活动行变暗 */
+    transition: all 0.3s ease;
+    align-items: center;
+}
+
+/* 正在执行的行高亮 */
+.v4-c-line.active {
+    opacity: 1 !important;
+    background: rgba(255, 68, 68, 0.2) !important;
+    color: #ff6e6e !important;
+    border-left: 4px solid #ff4444;
+    transform: translateX(4px); /* 稍微右移增加动感 */
+}
+
+.ca { 
+    color: #666; 
+    width: 90px; 
+    flex-shrink: 0;
+    font-size: 11px;
+}
+
+code {
+    background: none !important;
+    padding: 0 !important;
+    color: inherit !important;
+    font-family: inherit !important;
+}
+
+/* 标号样式 */
+.v5-asm-label { 
+    color: #d7ba7d; 
+    padding: 10px 20px 2px; 
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.v5-toolbar.has-error {
+    background: #8e2a2a !important;
+}
